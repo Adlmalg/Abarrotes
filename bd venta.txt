@@ -1,0 +1,48 @@
+Create database sventa;
+use sventa;
+
+CREATE TABLE Empleado(
+  Nombre_Empleado VARCHAR(45) NOT NULL  primary key,
+  Apellidos varchar(50) not null,
+  Telefono int(10) not null,
+  contraseña VARCHAR(45) NOT NULL)Engine=InnoDB;
+  
+  
+create table Proveedor (
+Nombre_Proveedor varchar(30) not null primary key,
+Apellidos varchar(50) not null,
+Dirección varchar(50) not null,
+Correo varchar (45)not null,
+Telefono varchar(10) not null,
+Producto varchar (30) not null)ENGINE = InnoDB;
+
+create table  Producto (
+Nombre_Producto varchar (45) not null primary key,
+Clave varchar(30) not null,
+Precio double,
+Cantidad int not null,
+Presentacion varchar(30) not null,
+Nombre_Proveedor varchar(30) not null,
+ foreign key(Nombre_Proveedor)references Proveedor(Nombre_Proveedor)
+)ENGINE = InnoDB;
+  
+create Table Venta (
+  idventas INT NOT NULL primary key,
+  Nombre_Producto Varchar (45) not null,
+  Fecha date,
+  Precio double,
+  cantidad int(45) NOT NULL,
+  Precio_total VARCHAR(45) NOT NULL,
+  Tipo_Pago Varchar(25) not null,
+  Recibido double ,
+  Cambio double,
+  foreign key(Nombre_producto )references Producto(Nombre_producto))
+ENGINE = InnoDB;
+
+create table inventario(
+idInventario int not null primary key,
+Fecha varchar(15) not null,
+Nombre_Producto varchar(30) not null,
+Existente int not null,
+foreign key(Nombre_Producto )references Producto (Nombre_Producto))ENGINE = InnoDB;
+
