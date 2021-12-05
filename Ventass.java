@@ -81,7 +81,6 @@ public void personalizaTabla() {
         txtNombre.setText(null);
         date_Chooser.setDate(null);
         txtTipo.setText(null);
-        txtUnitario.setText(null);
         txtCantidad.setText(null);
         txtPrecio.setText(null);
         txtRecibido.setText(null);
